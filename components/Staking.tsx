@@ -2,13 +2,47 @@ import React from "react";
 import image from "@/app/Assets/tokens.avif";
 import { Check } from "lucide-react";
 import Image from "next/image";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/all";
 
 const Staking = ({ stakingReference }: any) => {
+  gsap.registerPlugin(useGSAP, ScrollTrigger);
+
+  useGSAP(() => {
+    gsap.from(".left", {
+      x: -100,
+      opacity: 0,
+      duration: 1,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: ".left",
+        start: "top 80%",
+        end: "bottom 80%",
+      },
+    });
+
+    gsap.from(".right", {
+      x: 100,
+      opacity: 0,
+      duration: 1,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: ".left",
+        start: "top 80%",
+        end: "bottom 80%",
+      },
+    });
+  });
+
   return (
-    <section ref={stakingReference} className="w-full py-12 800:py-24 1024:py-32 ">
+    <section
+      ref={stakingReference}
+      className="w-full py-12 800:py-24 1024:py-32 "
+    >
       <div className="container px-6 800:px-6 text-black ">
         <div className="grid grid-cols-1 800:grid-cols-2 gap-8">
-          <div className="pl-8">
+          <div className="pl-8 left">
             <h2 className="text-3xl font-bold tracking-tight">
               Earn Rewards by Staking
             </h2>
@@ -44,7 +78,7 @@ const Staking = ({ stakingReference }: any) => {
               </li>
             </ul>
           </div>
-          <div className="flex items-center justify-center">
+          <div className="flex items-center justify-center right">
             <Image
               src={image}
               width="500"

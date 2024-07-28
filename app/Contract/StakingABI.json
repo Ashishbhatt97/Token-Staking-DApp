@@ -1,0 +1,628 @@
+{
+    "abi": [
+        {
+            "type": "constructor",
+            "inputs": [
+                {
+                    "name": "_stakingToken",
+                    "type": "address",
+                    "internalType": "address"
+                },
+                {
+                    "name": "_rewardToken",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "Reward_Rate",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "claimReward",
+            "inputs": [],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "lastUpdatedTime",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "rewardPerToken",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "rewardPerTokenStored",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "rewardToken",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "address",
+                    "internalType": "contract IERC20"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "rewards",
+            "inputs": [
+                {
+                    "name": "",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "stake",
+            "inputs": [
+                {
+                    "name": "amount",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "stakedBalance",
+            "inputs": [
+                {
+                    "name": "",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "stakingToken",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "address",
+                    "internalType": "contract IERC20"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "tokenEarned",
+            "inputs": [
+                {
+                    "name": "_account",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "userRewardPerTokenPaid",
+            "inputs": [
+                {
+                    "name": "",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "withdrawnToken",
+            "inputs": [
+                {
+                    "name": "amount",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "event",
+            "name": "RewardsClaimed",
+            "inputs": [
+                {
+                    "name": "user",
+                    "type": "address",
+                    "indexed": true,
+                    "internalType": "address"
+                },
+                {
+                    "name": "amount",
+                    "type": "uint256",
+                    "indexed": true,
+                    "internalType": "uint256"
+                }
+            ],
+            "anonymous": false
+        },
+        {
+            "type": "event",
+            "name": "Staked",
+            "inputs": [
+                {
+                    "name": "user",
+                    "type": "address",
+                    "indexed": true,
+                    "internalType": "address"
+                },
+                {
+                    "name": "amount",
+                    "type": "uint256",
+                    "indexed": true,
+                    "internalType": "uint256"
+                }
+            ],
+            "anonymous": false
+        },
+        {
+            "type": "event",
+            "name": "Withdrawn",
+            "inputs": [
+                {
+                    "name": "user",
+                    "type": "address",
+                    "indexed": true,
+                    "internalType": "address"
+                },
+                {
+                    "name": "amount",
+                    "type": "uint256",
+                    "indexed": true,
+                    "internalType": "uint256"
+                }
+            ],
+            "anonymous": false
+        },
+        {
+            "type": "error",
+            "name": "ReentrancyGuardReentrantCall",
+            "inputs": []
+        }
+    ],
+    "bytecode": {
+        "object": "0x6080604052348015600f57600080fd5b5060405161093b38038061093b833981016040819052602c91607c565b6001600081905580546001600160a01b039384166001600160a01b0319918216179091556002805492909316911617905560aa565b80516001600160a01b0381168114607757600080fd5b919050565b60008060408385031215608e57600080fd5b6095836061565b915060a1602084016061565b90509250929050565b610882806100b96000396000f3fe608060405234801561001057600080fd5b50600436106100cf5760003560e01c80638b8763471161008c578063bf85689511610066578063bf856895146101c4578063cd3daf9d146101cd578063df136d65146101d5578063f7c618c1146101de57600080fd5b80638b87634714610189578063a694fc3a146101a9578063b88a802f146101bc57600080fd5b80630700037d146100d45780635780fe9814610107578063602172671461011a57806369ef6ee71461013a57806372f702f314610149578063746b116114610174575b600080fd5b6100f46100e236600461076c565b60076020526000908152604090205481565b6040519081526020015b60405180910390f35b6100f461011536600461076c565b6101f1565b6100f461012836600461076c565b60066020526000908152604090205481565b6100f4670de0b6b3a764000081565b60015461015c906001600160a01b031681565b6040516001600160a01b0390911681526020016100fe565b61018761018236600461079c565b610245565b005b6100f461019736600461076c565b60086020526000908152604090205481565b6101876101b736600461079c565b610412565b610187610551565b6100f460055481565b6100f46106e5565b6100f460045481565b60025461015c906001600160a01b031681565b6001600160a01b0381166000908152600860205260408120546102126106e5565b61021c91906107cb565b6001600160a01b03831660009081526006602052604090205461023f91906107de565b92915050565b61024d610742565b336102566106e5565b60045542600555610266816101f1565b6001600160a01b038216600090815260076020908152604080832093909355600454600890915291902055816102e35760405162461bcd60e51b815260206004820152601d60248201527f416d6f756e74206d7573742062652067726561746572207468616e203000000060448201526064015b60405180910390fd5b81600360008282546102f591906107cb565b909155505033600090815260066020526040812080548492906103199084906107cb565b9091555050604051829033907f7084f5476618d8e60b11ef0d7d3f06914655adb8793e28ff7f018d4c76d505d590600090a360015460405163a9059cbb60e01b8152336004820152602481018490526000916001600160a01b03169063a9059cbb906044015b6020604051808303816000875af115801561039e573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906103c291906107f5565b9050806104035760405162461bcd60e51b815260206004820152600f60248201526e151c985b9cd9995c8819985a5b1959608a1b60448201526064016102da565b505061040f6001600055565b50565b61041a610742565b336104236106e5565b60045542600555610433816101f1565b6001600160a01b038216600090815260076020908152604080832093909355600454600890915291902055816104ab5760405162461bcd60e51b815260206004820152601d60248201527f416d6f756e74206d7573742062652067726561746572207468616e203000000060448201526064016102da565b81600360008282546104bd9190610817565b909155505033600090815260066020526040812080548492906104e1908490610817565b9091555050604051829033907f9e71bc8eea02a63969f509818f2dafb9254532904319f9dbda79b67bd34a5f3d90600090a36001546040516323b872dd60e01b8152336004820152306024820152604481018490526000916001600160a01b0316906323b872dd9060640161037f565b610559610742565b336105626106e5565b60045542600555610572816101f1565b6001600160a01b0382166000908152600760208181526040808420949094556004546008825284842055338352522054806105e55760405162461bcd60e51b81526020600482015260136024820152724e6f207265776172647320746f20636c61696d60681b60448201526064016102da565b33600081815260076020526040808220829055518392917ffc30cddea38e2bf4d6ea7d3f9ed3b6ad7f176419f4963bd81318067a4aee73fe91a360025460405163a9059cbb60e01b8152336004820152602481018390526000916001600160a01b03169063a9059cbb906044016020604051808303816000875af1158015610671573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061069591906107f5565b9050806106d65760405162461bcd60e51b815260206004820152600f60248201526e151c985b9cd9995c8819985a5b1959608a1b60448201526064016102da565b5050506106e36001600055565b565b60006003546000036106f8575060045490565b60006005544261070891906107cb565b9050600061071e82670de0b6b3a76400006107de565b90506003548161072e919061082a565b60045461073b9190610817565b9250505090565b60026000540361076557604051633ee5aeb560e01b815260040160405180910390fd5b6002600055565b60006020828403121561077e57600080fd5b81356001600160a01b038116811461079557600080fd5b9392505050565b6000602082840312156107ae57600080fd5b5035919050565b634e487b7160e01b600052601160045260246000fd5b8181038181111561023f5761023f6107b5565b808202811582820484141761023f5761023f6107b5565b60006020828403121561080757600080fd5b8151801515811461079557600080fd5b8082018082111561023f5761023f6107b5565b60008261084757634e487b7160e01b600052601260045260246000fd5b50049056fea26469706673582212204510537a625a91e1077d52e0e6214f8d95e2b731726e20bda67382c3182ef00564736f6c634300081a0033",
+        "sourceMap": "176:2899:35:-:0;;;1094:154;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;1857:1:29;2061:7;:21;;;1161:36:35;;-1:-1:-1;;;;;1161:36:35;;;-1:-1:-1;;;;;;1161:36:35;;;;;;;1207:11;:34;;;;;;;;;;;176:2899;;14:177:39;93:13;;-1:-1:-1;;;;;135:31:39;;125:42;;115:70;;181:1;178;171:12;115:70;14:177;;;:::o;196:293::-;275:6;283;336:2;324:9;315:7;311:23;307:32;304:52;;;352:1;349;342:12;304:52;375:40;405:9;375:40;:::i;:::-;365:50;;434:49;479:2;468:9;464:18;434:49;:::i;:::-;424:59;;196:293;;;;;:::o;:::-;176:2899:35;;;;;;",
+        "linkReferences": {}
+    },
+    "deployedBytecode": {
+        "object": "0x608060405234801561001057600080fd5b50600436106100cf5760003560e01c80638b8763471161008c578063bf85689511610066578063bf856895146101c4578063cd3daf9d146101cd578063df136d65146101d5578063f7c618c1146101de57600080fd5b80638b87634714610189578063a694fc3a146101a9578063b88a802f146101bc57600080fd5b80630700037d146100d45780635780fe9814610107578063602172671461011a57806369ef6ee71461013a57806372f702f314610149578063746b116114610174575b600080fd5b6100f46100e236600461076c565b60076020526000908152604090205481565b6040519081526020015b60405180910390f35b6100f461011536600461076c565b6101f1565b6100f461012836600461076c565b60066020526000908152604090205481565b6100f4670de0b6b3a764000081565b60015461015c906001600160a01b031681565b6040516001600160a01b0390911681526020016100fe565b61018761018236600461079c565b610245565b005b6100f461019736600461076c565b60086020526000908152604090205481565b6101876101b736600461079c565b610412565b610187610551565b6100f460055481565b6100f46106e5565b6100f460045481565b60025461015c906001600160a01b031681565b6001600160a01b0381166000908152600860205260408120546102126106e5565b61021c91906107cb565b6001600160a01b03831660009081526006602052604090205461023f91906107de565b92915050565b61024d610742565b336102566106e5565b60045542600555610266816101f1565b6001600160a01b038216600090815260076020908152604080832093909355600454600890915291902055816102e35760405162461bcd60e51b815260206004820152601d60248201527f416d6f756e74206d7573742062652067726561746572207468616e203000000060448201526064015b60405180910390fd5b81600360008282546102f591906107cb565b909155505033600090815260066020526040812080548492906103199084906107cb565b9091555050604051829033907f7084f5476618d8e60b11ef0d7d3f06914655adb8793e28ff7f018d4c76d505d590600090a360015460405163a9059cbb60e01b8152336004820152602481018490526000916001600160a01b03169063a9059cbb906044015b6020604051808303816000875af115801561039e573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906103c291906107f5565b9050806104035760405162461bcd60e51b815260206004820152600f60248201526e151c985b9cd9995c8819985a5b1959608a1b60448201526064016102da565b505061040f6001600055565b50565b61041a610742565b336104236106e5565b60045542600555610433816101f1565b6001600160a01b038216600090815260076020908152604080832093909355600454600890915291902055816104ab5760405162461bcd60e51b815260206004820152601d60248201527f416d6f756e74206d7573742062652067726561746572207468616e203000000060448201526064016102da565b81600360008282546104bd9190610817565b909155505033600090815260066020526040812080548492906104e1908490610817565b9091555050604051829033907f9e71bc8eea02a63969f509818f2dafb9254532904319f9dbda79b67bd34a5f3d90600090a36001546040516323b872dd60e01b8152336004820152306024820152604481018490526000916001600160a01b0316906323b872dd9060640161037f565b610559610742565b336105626106e5565b60045542600555610572816101f1565b6001600160a01b0382166000908152600760208181526040808420949094556004546008825284842055338352522054806105e55760405162461bcd60e51b81526020600482015260136024820152724e6f207265776172647320746f20636c61696d60681b60448201526064016102da565b33600081815260076020526040808220829055518392917ffc30cddea38e2bf4d6ea7d3f9ed3b6ad7f176419f4963bd81318067a4aee73fe91a360025460405163a9059cbb60e01b8152336004820152602481018390526000916001600160a01b03169063a9059cbb906044016020604051808303816000875af1158015610671573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061069591906107f5565b9050806106d65760405162461bcd60e51b815260206004820152600f60248201526e151c985b9cd9995c8819985a5b1959608a1b60448201526064016102da565b5050506106e36001600055565b565b60006003546000036106f8575060045490565b60006005544261070891906107cb565b9050600061071e82670de0b6b3a76400006107de565b90506003548161072e919061082a565b60045461073b9190610817565b9250505090565b60026000540361076557604051633ee5aeb560e01b815260040160405180910390fd5b6002600055565b60006020828403121561077e57600080fd5b81356001600160a01b038116811461079557600080fd5b9392505050565b6000602082840312156107ae57600080fd5b5035919050565b634e487b7160e01b600052601160045260246000fd5b8181038181111561023f5761023f6107b5565b808202811582820484141761023f5761023f6107b5565b60006020828403121561080757600080fd5b8151801515811461079557600080fd5b8082018082111561023f5761023f6107b5565b60008261084757634e487b7160e01b600052601260045260246000fd5b50049056fea26469706673582212204510537a625a91e1077d52e0e6214f8d95e2b731726e20bda67382c3182ef00564736f6c634300081a0033",
+        "sourceMap": "176:2899:35:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;501:42;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;451:25:39;;;439:2;424:18;501:42:35;;;;;;;;1605:198;;;;;;:::i;:::-;;:::i;447:48::-;;;;;;:::i;:::-;;;;;;;;;;;;;;282:42;;320:4;282:42;;218:26;;;;;-1:-1:-1;;;;;218:26:35;;;;;;-1:-1:-1;;;;;667:32:39;;;649:51;;637:2;622:18;218:26:35;487:219:39;2281:413:35;;;;;;:::i;:::-;;:::i;:::-;;549:57;;;;;;:::i;:::-;;;;;;;;;;;;;;1809:466;;;;;;:::i;:::-;;:::i;2700:373::-;;;:::i;410:30::-;;;;;;1254:345;;;:::i;369:35::-;;;;;;250:25;;;;;-1:-1:-1;;;;;250:25:35;;;1605:198;-1:-1:-1;;;;;1763:32:35;;1665:7;1763:32;;;:22;:32;;;;;;1744:16;:14;:16::i;:::-;:51;;;;:::i;:::-;-1:-1:-1;;;;;1704:23:35;;;;;;:13;:23;;;;;;1703:93;;;;:::i;:::-;1684:112;1605:198;-1:-1:-1;;1605:198:35:o;2281:413::-;2500:21:29;:19;:21::i;:::-;2375:10:35::1;895:16;:14;:16::i;:::-;872:20;:39:::0;939:15:::1;921;:33:::0;984:21:::1;996:8:::0;984:11:::1;:21::i;:::-;-1:-1:-1::0;;;;;964:17:35;::::1;;::::0;;;:7:::1;:17;::::0;;;;;;;:41;;;;1050:20:::1;::::0;1015:22:::1;:32:::0;;;;;;:55;2405:10;2397:52:::2;;;::::0;-1:-1:-1;;;2397:52:35;;1536:2:39;2397:52:35::2;::::0;::::2;1518:21:39::0;1575:2;1555:18;;;1548:30;1614:31;1594:18;;;1587:59;1663:18;;2397:52:35::2;;;;;;;;;2480:6;2459:17;;:27;;;;;;;:::i;:::-;::::0;;;-1:-1:-1;;2510:10:35::2;2496:25;::::0;;;:13:::2;:25;::::0;;;;:35;;2525:6;;2496:25;:35:::2;::::0;2525:6;;2496:35:::2;:::i;:::-;::::0;;;-1:-1:-1;;2546:29:35::2;::::0;2568:6;;2556:10:::2;::::0;2546:29:::2;::::0;;;::::2;2601:12;::::0;:41:::2;::::0;-1:-1:-1;;;2601:41:35;;2623:10:::2;2601:41;::::0;::::2;1866:51:39::0;1933:18;;;1926:34;;;2586:12:35::2;::::0;-1:-1:-1;;;;;2601:12:35::2;::::0;:21:::2;::::0;1839:18:39;;2601:41:35::2;;;;;;;;;;;;;;;;;;;::::0;::::2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;2586:56;;2660:7;2652:35;;;::::0;-1:-1:-1;;;2652:35:35;;2455:2:39;2652:35:35::2;::::0;::::2;2437:21:39::0;2494:2;2474:18;;;2467:30;-1:-1:-1;;;2513:18:39;;;2506:45;2568:18;;2652:35:35::2;2253:339:39::0;2652:35:35::2;2387:307;2531:1:29::1;2542:20:::0;1857:1;3068:7;:21;2888:208;2542:20;2281:413:35;:::o;1809:466::-;2500:21:29;:19;:21::i;:::-;1894:10:35::1;895:16;:14;:16::i;:::-;872:20;:39:::0;939:15:::1;921;:33:::0;984:21:::1;996:8:::0;984:11:::1;:21::i;:::-;-1:-1:-1::0;;;;;964:17:35;::::1;;::::0;;;:7:::1;:17;::::0;;;;;;;:41;;;;1050:20:::1;::::0;1015:22:::1;:32:::0;;;;;;:55;1924:10;1916:52:::2;;;::::0;-1:-1:-1;;;1916:52:35;;1536:2:39;1916:52:35::2;::::0;::::2;1518:21:39::0;1575:2;1555:18;;;1548:30;1614:31;1594:18;;;1587:59;1663:18;;1916:52:35::2;1334:353:39::0;1916:52:35::2;1999:6;1978:17;;:27;;;;;;;:::i;:::-;::::0;;;-1:-1:-1;;2029:10:35::2;2015:25;::::0;;;:13:::2;:25;::::0;;;;:35;;2044:6;;2015:25;:35:::2;::::0;2044:6;;2015:35:::2;:::i;:::-;::::0;;;-1:-1:-1;;2066:26:35::2;::::0;2085:6;;2073:10:::2;::::0;2066:26:::2;::::0;;;::::2;2117:12;::::0;:106:::2;::::0;-1:-1:-1;;;2117:106:35;;2156:10:::2;2117:106;::::0;::::2;2929:51:39::0;2188:4:35::2;2996:18:39::0;;;2989:60;3065:18;;;3058:34;;;2102:12:35::2;::::0;-1:-1:-1;;;;;2117:12:35::2;::::0;:25:::2;::::0;2902:18:39;;2117:106:35::2;2727:371:39::0;2700:373:35;2500:21:29;:19;:21::i;:::-;2763:10:35::1;895:16;:14;:16::i;:::-;872:20;:39:::0;939:15:::1;921;:33:::0;984:21:::1;996:8:::0;984:11:::1;:21::i;:::-;-1:-1:-1::0;;;;;964:17:35;::::1;;::::0;;;:7:::1;:17;::::0;;;;;;;:41;;;;1050:20:::1;::::0;1015:22:::1;:32:::0;;;;;:55;2810:10:::2;2802:19:::0;;;;;2839:10;2831:42:::2;;;::::0;-1:-1:-1;;;2831:42:35;;3305:2:39;2831:42:35::2;::::0;::::2;3287:21:39::0;3344:2;3324:18;;;3317:30;-1:-1:-1;;;3363:18:39;;;3356:49;3422:18;;2831:42:35::2;3103:343:39::0;2831:42:35::2;2891:10;2905:1;2883:19:::0;;;:7:::2;:19;::::0;;;;;:23;;;2921:34;2948:6;;2891:10;2921:34:::2;::::0;::::2;2981:11;::::0;:40:::2;::::0;-1:-1:-1;;;2981:40:35;;3002:10:::2;2981:40;::::0;::::2;1866:51:39::0;1933:18;;;1926:34;;;2966:12:35::2;::::0;-1:-1:-1;;;;;2981:11:35::2;::::0;:20:::2;::::0;1839:18:39;;2981:40:35::2;;;;;;;;;;;;;;;;;;::::0;::::2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;2966:55;;3039:7;3031:35;;;::::0;-1:-1:-1;;;3031:35:35;;2455:2:39;3031:35:35::2;::::0;::::2;2437:21:39::0;2494:2;2474:18;;;2467:30;-1:-1:-1;;;2513:18:39;;;2506:45;2568:18;;3031:35:35::2;2253:339:39::0;3031:35:35::2;2775:298;;2531:1:29::1;2542:20:::0;1857:1;3068:7;:21;2888:208;2542:20;2700:373:35:o;1254:345::-;1301:7;1324:17;;1345:1;1324:22;1320:80;;-1:-1:-1;1369:20:35;;;1254:345::o;1320:80::-;1410:17;1448:15;;1430;:33;;;;:::i;:::-;1410:53;-1:-1:-1;1473:20:35;1496:23;1410:53;320:4;1496:23;:::i;:::-;1473:46;;1575:17;;1560:12;:32;;;;:::i;:::-;1537:20;;:55;;;;:::i;:::-;1530:62;;;;1254:345;:::o;2575:307:29:-;1899:1;2702:7;;:18;2698:86;;2743:30;;-1:-1:-1;;;2743:30:29;;;;;;;;;;;2698:86;1899:1;2858:7;:17;2575:307::o;14:286:39:-;73:6;126:2;114:9;105:7;101:23;97:32;94:52;;;142:1;139;132:12;94:52;168:23;;-1:-1:-1;;;;;220:31:39;;210:42;;200:70;;266:1;263;256:12;200:70;289:5;14:286;-1:-1:-1;;;14:286:39:o;711:180::-;770:6;823:2;811:9;802:7;798:23;794:32;791:52;;;839:1;836;829:12;791:52;-1:-1:-1;862:23:39;;711:180;-1:-1:-1;711:180:39:o;896:127::-;957:10;952:3;948:20;945:1;938:31;988:4;985:1;978:15;1012:4;1009:1;1002:15;1028:128;1095:9;;;1116:11;;;1113:37;;;1130:18;;:::i;1161:168::-;1234:9;;;1265;;1282:15;;;1276:22;;1262:37;1252:71;;1303:18;;:::i;1971:277::-;2038:6;2091:2;2079:9;2070:7;2066:23;2062:32;2059:52;;;2107:1;2104;2097:12;2059:52;2139:9;2133:16;2192:5;2185:13;2178:21;2171:5;2168:32;2158:60;;2214:1;2211;2204:12;2597:125;2662:9;;;2683:10;;;2680:36;;;2696:18;;:::i;3451:217::-;3491:1;3517;3507:132;;3561:10;3556:3;3552:20;3549:1;3542:31;3596:4;3593:1;3586:15;3624:4;3621:1;3614:15;3507:132;-1:-1:-1;3653:9:39;;3451:217::o",
+        "linkReferences": {}
+    },
+    "methodIdentifiers": {
+        "Reward_Rate()": "69ef6ee7",
+        "claimReward()": "b88a802f",
+        "lastUpdatedTime()": "bf856895",
+        "rewardPerToken()": "cd3daf9d",
+        "rewardPerTokenStored()": "df136d65",
+        "rewardToken()": "f7c618c1",
+        "rewards(address)": "0700037d",
+        "stake(uint256)": "a694fc3a",
+        "stakedBalance(address)": "60217267",
+        "stakingToken()": "72f702f3",
+        "tokenEarned(address)": "5780fe98",
+        "userRewardPerTokenPaid(address)": "8b876347",
+        "withdrawnToken(uint256)": "746b1161"
+    },
+    "rawMetadata": "{\"compiler\":{\"version\":\"0.8.26+commit.8a97fa7a\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_stakingToken\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_rewardToken\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"ReentrancyGuardReentrantCall\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"RewardsClaimed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"Staked\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"Withdrawn\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"Reward_Rate\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"claimReward\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"lastUpdatedTime\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"rewardPerToken\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"rewardPerTokenStored\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"rewardToken\",\"outputs\":[{\"internalType\":\"contract IERC20\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"rewards\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"stake\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"stakedBalance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"stakingToken\",\"outputs\":[{\"internalType\":\"contract IERC20\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_account\",\"type\":\"address\"}],\"name\":\"tokenEarned\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"userRewardPerTokenPaid\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"withdrawnToken\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"errors\":{\"ReentrancyGuardReentrantCall()\":[{\"details\":\"Unauthorized reentrant call.\"}]},\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/Staking.sol\":\"Staking\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":'@openzeppelin/=lib/openzeppelin-contracts/lib/openzeppelin-contracts/'/\",\":@openzeppelin/=lib/openzeppelin-contracts/\",\":ds-test/=lib/openzeppelin-contracts/lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":halmos-cheatcodes/=lib/openzeppelin-contracts/lib/halmos-cheatcodes/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\"]},\"sources\":{\"lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0xee2337af2dc162a973b4be6d3f7c16f06298259e0af48c5470d2839bfa8a22f4\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://30c476b4b2f405c1bb3f0bae15b006d129c80f1bfd9d0f2038160a3bb9745009\",\"dweb:/ipfs/Qmb3VcuDufv6xbHeVgksC4tHpc5gKYVqBEwjEXW72XzSvN\"]},\"lib/openzeppelin-contracts/contracts/utils/ReentrancyGuard.sol\":{\"keccak256\":\"0x84496688b0b80f8e592f0db8ef82c3e7172a1658169b8f0832b522e935e216c0\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://c98e6288d465afdbe084108995c6a8f19db173d6f068b92ef1f70f7edf6ffb3a\",\"dweb:/ipfs/QmShqKgJLqoRK2vv4sFU3iouqFGvWUbvGopbZS8Qn9Bp1X\"]},\"src/Staking.sol\":{\"keccak256\":\"0x93c5df56d300896ef6fb68cdc9a4671cdd0a1643f0264b6495c500ef5df6c338\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://c2049234def61f9910d0e93010c2e6fa19a16ca92f27232cf9a2e3da6f8ce5b2\",\"dweb:/ipfs/QmWX6j2yaybGjrpiSxoAQrtTHU2JqquMok3veuqHEtAuFy\"]}},\"version\":1}",
+    "metadata": {
+        "compiler": {
+            "version": "0.8.26+commit.8a97fa7a"
+        },
+        "language": "Solidity",
+        "output": {
+            "abi": [
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "_stakingToken",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "_rewardToken",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "constructor"
+                },
+                {
+                    "inputs": [],
+                    "type": "error",
+                    "name": "ReentrancyGuardReentrantCall"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "user",
+                            "type": "address",
+                            "indexed": true
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "amount",
+                            "type": "uint256",
+                            "indexed": true
+                        }
+                    ],
+                    "type": "event",
+                    "name": "RewardsClaimed",
+                    "anonymous": false
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "user",
+                            "type": "address",
+                            "indexed": true
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "amount",
+                            "type": "uint256",
+                            "indexed": true
+                        }
+                    ],
+                    "type": "event",
+                    "name": "Staked",
+                    "anonymous": false
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "user",
+                            "type": "address",
+                            "indexed": true
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "amount",
+                            "type": "uint256",
+                            "indexed": true
+                        }
+                    ],
+                    "type": "event",
+                    "name": "Withdrawn",
+                    "anonymous": false
+                },
+                {
+                    "inputs": [],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "Reward_Rate",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [],
+                    "stateMutability": "nonpayable",
+                    "type": "function",
+                    "name": "claimReward"
+                },
+                {
+                    "inputs": [],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "lastUpdatedTime",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "rewardPerToken",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "rewardPerTokenStored",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "rewardToken",
+                    "outputs": [
+                        {
+                            "internalType": "contract IERC20",
+                            "name": "",
+                            "type": "address"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "rewards",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "amount",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "function",
+                    "name": "stake"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "stakedBalance",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "stakingToken",
+                    "outputs": [
+                        {
+                            "internalType": "contract IERC20",
+                            "name": "",
+                            "type": "address"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "_account",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "tokenEarned",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "userRewardPerTokenPaid",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "amount",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "function",
+                    "name": "withdrawnToken"
+                }
+            ],
+            "devdoc": {
+                "kind": "dev",
+                "methods": {},
+                "version": 1
+            },
+            "userdoc": {
+                "kind": "user",
+                "methods": {},
+                "version": 1
+            }
+        },
+        "settings": {
+            "remappings": [
+                "'@openzeppelin/=lib/openzeppelin-contracts/lib/openzeppelin-contracts/'/",
+                "@openzeppelin/=lib/openzeppelin-contracts/",
+                "ds-test/=lib/openzeppelin-contracts/lib/forge-std/lib/ds-test/src/",
+                "erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/",
+                "forge-std/=lib/forge-std/src/",
+                "halmos-cheatcodes/=lib/openzeppelin-contracts/lib/halmos-cheatcodes/src/",
+                "openzeppelin-contracts/=lib/openzeppelin-contracts/"
+            ],
+            "optimizer": {
+                "enabled": true,
+                "runs": 200
+            },
+            "metadata": {
+                "bytecodeHash": "ipfs"
+            },
+            "compilationTarget": {
+                "src/Staking.sol": "Staking"
+            },
+            "evmVersion": "paris",
+            "libraries": {}
+        },
+        "sources": {
+            "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol": {
+                "keccak256": "0xee2337af2dc162a973b4be6d3f7c16f06298259e0af48c5470d2839bfa8a22f4",
+                "urls": [
+                    "bzz-raw://30c476b4b2f405c1bb3f0bae15b006d129c80f1bfd9d0f2038160a3bb9745009",
+                    "dweb:/ipfs/Qmb3VcuDufv6xbHeVgksC4tHpc5gKYVqBEwjEXW72XzSvN"
+                ],
+                "license": "MIT"
+            },
+            "lib/openzeppelin-contracts/contracts/utils/ReentrancyGuard.sol": {
+                "keccak256": "0x84496688b0b80f8e592f0db8ef82c3e7172a1658169b8f0832b522e935e216c0",
+                "urls": [
+                    "bzz-raw://c98e6288d465afdbe084108995c6a8f19db173d6f068b92ef1f70f7edf6ffb3a",
+                    "dweb:/ipfs/QmShqKgJLqoRK2vv4sFU3iouqFGvWUbvGopbZS8Qn9Bp1X"
+                ],
+                "license": "MIT"
+            },
+            "src/Staking.sol": {
+                "keccak256": "0x93c5df56d300896ef6fb68cdc9a4671cdd0a1643f0264b6495c500ef5df6c338",
+                "urls": [
+                    "bzz-raw://c2049234def61f9910d0e93010c2e6fa19a16ca92f27232cf9a2e3da6f8ce5b2",
+                    "dweb:/ipfs/QmWX6j2yaybGjrpiSxoAQrtTHU2JqquMok3veuqHEtAuFy"
+                ],
+                "license": "MIT"
+            }
+        },
+        "version": 1
+    },
+    "id": 35
+}

@@ -5,8 +5,13 @@ import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 
 import { NavbarItems } from "@/Utils/NavbarLinks";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import Wallet from "./Wallet";
+import { Button } from "./ui/button";
 
 const Navbar = ({ stakingReference, featureReference }: any) => {
+  gsap.registerPlugin(useGSAP);
   const router = useRouter();
   const currentPathname = usePathname();
   const [pathname, setPathname] = useState("");
@@ -25,11 +30,20 @@ const Navbar = ({ stakingReference, featureReference }: any) => {
     }
   };
 
+  useGSAP(() => {
+    gsap.from(".link", {
+      opacity: 0,
+      y: -100,
+      stagger: 0.2,
+      duration: 1,
+    });
+  });
+
   return (
     <>
       <div className="1024:w-full 1024:text-[14px] 600:text-[12px] 1024:h-[80px] 600:font-medium 600:leading-4 h-[70px] hidden 600:flex dark items-center justify-end px-16 w-full">
         <div
-          className="flex items-center justify-between w-[30%] cursor-pointer"
+          className=" link flex items-center justify-between w-[30%] cursor-pointer"
           onClick={() => router.push("/")}
         >
           LOGO
@@ -39,7 +53,7 @@ const Navbar = ({ stakingReference, featureReference }: any) => {
           {NavbarItems.map((navlink, i) => {
             return (
               <>
-                <div className="600:w-[20%] cursor-pointer overflow-hidden text-left h-[16px]">
+                <div className="link 600:w-[20%] cursor-pointer overflow-hidden text-left h-[16px]">
                   <div
                     className="w-fit h-full group"
                     onClick={(e) => {
@@ -61,9 +75,10 @@ const Navbar = ({ stakingReference, featureReference }: any) => {
             );
           })}
         </div>
-        <button
+        <Wallet />
+        {/* <Button
           //   onClick={() => connectWallet()}
-          className="1024:px-6 1024:py-3 px-4 py-2 700:text-[12px] text-[10px] max-w-[200px] bg-gray-900 font-semibold text-white rounded-lg active:scale-95 600:flex 900:text-sm items-center overflow-hidden pr-8 truncate whitespace-nowrap"
+          className="link 1024:px-6 1024:py-3 px-4 py-2 700:text-[12px] text-[10px] max-w-[200px] bg-gray-900 font-semibold text-white rounded-lg active:scale-95 600:flex 900:text-sm items-center overflow-hidden pr-8 truncate whitespace-nowrap"
         >
           {currentUser ? (
             <p className="justify-end flex items-center">
@@ -76,7 +91,7 @@ const Navbar = ({ stakingReference, featureReference }: any) => {
             className={currentUser ? `hidden` : "block"}
             size={20}
           />
-        </button>
+        </Button> */}
       </div>
 
       {/* mobile view */}
